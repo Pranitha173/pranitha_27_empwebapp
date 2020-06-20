@@ -24,14 +24,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 			preparedStatement.setString(1, name);
 			res = preparedStatement.executeQuery();
-			EmployeeTest beans = new EmployeeTest();
+			EmployeeTest test = new EmployeeTest();
 			if (res.next()) {
-				beans.setEid(res.getInt("eid"));
-				beans.setName(res.getString("name"));
-				beans.setEmailId(res.getString("email"));
-				beans.setMobilenono(res.getLong("mobilenono"));
-				beans.setGender(res.getString("gender"));
-				return beans;
+				test.setEid(res.getInt("eid"));
+				test.setName(res.getString("name"));
+				test.setEmailId(res.getString("email"));
+				test.setMobilenono(res.getLong("mobilenono"));
+				test.setGender(res.getString("gender"));
+				return test;
 			} else {
 				return null;
 			}
@@ -53,7 +53,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 
 	@Override
-	public boolean deleteEmployeeInfo(int id) {
+	public boolean deleteEmployeetest(int id) {
 		// TODO Auto-generated method stub
 				String url = "jdbc:mysql://localhost:3306/emp_db?useSSL=false&user=root&password=root";
 				String query = "delete from employee_info where eid=?";
@@ -74,14 +74,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			}
 
 	@Override
-	public boolean updateEmployeeInfo(EmployeeTest bean) {
+	public boolean updateEmployeetest(EmployeeTest test) {
 		String query = "update employee_info set name=? where eid=?";
 		String url = "jdbc:mysql://localhost:3306/emp_db?useSSL=false&user=root&password=root";
 		try (Connection connection = DriverManager.getConnection(url);
 				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
 			Class.forName("com.mysql.jdbc.Driver");
-			preparedStatement.setString(1, bean.getName());
-			preparedStatement.setInt(2, bean.getEid());
+			preparedStatement.setString(1, test.getName());
+			preparedStatement.setInt(2, test.getEid());
 			int res = preparedStatement.executeUpdate();
 			if (res != 0) {
 				return true;
@@ -96,7 +96,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 
 	@Override
-	public boolean createEmployeeInfo(EmployeeTest bean) {
+	public boolean createEmployeetest(EmployeeTest test) {
 		String url = "jdbc:mysql://localhost:3306/emp_db?useSSL=false&user=root&password=root";
 		String query = "insert into employee_info values(?,?,?,?,?,?,?,?,?,?,?,?)";
 		try (Connection connection = DriverManager.getConnection(url);
@@ -136,7 +136,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		String url = "jdbc:mysql://localhost:3306/emp_db?useSSL=false&user=root&password=root";
 		String query = "select * from employee_info ";
 
-		List<EmployeeTest> info = new LinkedList<EmployeeTest>();
+		List<EmployeeTest> test = new LinkedList<EmployeeTest>();
 		try (Connection connection = DriverManager.getConnection(url);
 				PreparedStatement preparedStatement = connection.prepareStatement(query);
 				ResultSet res = preparedStatement.executeQuery();) {
@@ -144,25 +144,25 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			while (res.next()) {
 				EmployeeTest beans = new EmployeeTest();
 
-				beans.setEid(res.getInt("eid"));
-				beans.setName(res.getString("name"));
-				beans.setEmailId(res.getString("email"));
-				beans.setMobilenono(res.getLong("mobilenono"));
-				beans.setGender(res.getString("gender"));
-				beans.setAge(res.getInt("age"));
-				beans.setDeptid(res.getInt("deptid"));
-				beans.setDesignation(res.getString("designation"));
-				beans.setDoj(res.getLong("doj"));
-				beans.setDob(res.getLong("dob"));
-				beans.setBloodgroup(res.getString("bloodgroup"));
-				beans.setSalary(res.getLong("salary"));
-				info.add(beans);
+				((EmployeeTest) test).setEid(res.getInt("eid"));
+				((EmployeeTest) test).setName(res.getString("name"));
+				((EmployeeTest) test).setEmailId(res.getString("email"));
+				((EmployeeTest) test).setMobilenono(res.getLong("mobilenono"));
+				((EmployeeTest) test).setGender(res.getString("gender"));
+				((EmployeeTest) test).setAge(res.getInt("age"));
+				((EmployeeTest) test).setDeptid(res.getInt("deptid"));
+				((EmployeeTest) test).setDesignation(res.getString("designation"));
+				((EmployeeTest) test).setDoj(res.getLong("doj"));
+				((EmployeeTest) test).setDob(res.getLong("dob"));
+				((EmployeeTest) test).setBloodgroup(res.getString("bloodgroup"));
+				((EmployeeTest) test).setSalary(res.getLong("salary"));
+				test.addAll(test);
 			}
 
-			if (info.isEmpty()) {
+			if (test.isEmpty()) {
 				return null;
 			} else {
-				return info;
+				return test;
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -173,7 +173,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 
 	@Override
-	public boolean addEmployeeInfo(EmployeeTest bean) {
+	public boolean addEmployeetest(EmployeeTest bean) {
 		// TODO Auto-generated method stub
 		return false;
 	}

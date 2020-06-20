@@ -26,7 +26,7 @@ public class UpdateController extends HttpServlet{
 	 	 demo.setEmailId("emailid");
 	 	 
 	 EmployeeDAO dao=new EmployeeDAOImpl();
-	 dao.updateEmployeeInfo(demo);
+	 dao.updateEmployeetest(demo);
 	 req.getRequestDispatcher("edit.jsp").forward(req, resp);
 	 	}
 	}

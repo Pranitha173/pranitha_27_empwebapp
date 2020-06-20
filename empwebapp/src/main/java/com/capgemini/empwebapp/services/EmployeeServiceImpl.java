@@ -12,7 +12,7 @@ public abstract class EmployeeServiceImpl implements EmployeeService{
 	
 	public boolean createEmployeeTest(EmployeeTest test) {
 		// TODO Auto-generated method stub
-		return dao.createEmployeeInfo(test);
+		return dao.createEmployeetest(test);
 	}
 	
 	public boolean addEmployeeTest(EmployeeTest test) {
@@ -22,12 +22,12 @@ public abstract class EmployeeServiceImpl implements EmployeeService{
 	
 	public boolean updateEmployeeTest(EmployeeTest test) {
 		// TODO Auto-generated method stub
-		return dao.updateEmployeeInfo(test);
+		return dao.updateEmployeetest(test);
 	}
 	
 	public boolean deleteEmployeeTest(int id) {
 		// TODO Auto-generated method stub
-		return dao.deleteEmployeeInfo(id);
+		return dao.deleteEmployeetest(id);
 	}
 	
 	public EmployeeTest getEmployeeDetailsByname1(String name) {

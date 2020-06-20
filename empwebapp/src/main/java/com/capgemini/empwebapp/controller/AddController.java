@@ -28,8 +28,8 @@ public class AddController extends HttpServlet{
 	    demo.setEmpName(name);
 	    demo.setDesignation(designation);
 	    EmployeeDAO dao=new EmployeeDAOImpl();
-	    dao.addEmployeeInfo(demo);
-	    boolean check= dao.addEmployeeInfo(demo);
+	    dao.addEmployeetest(demo);
+	    boolean check= dao.addEmployeetest(demo);
 
 	}
 	

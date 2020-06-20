@@ -38,7 +38,7 @@ private EmployeeService service= new EmployeeServiceImpl();
 				
 				HttpSession httpSession = req.getSession(true);
 				httpSession.setAttribute("loggedInEmployeeInfo", employeeTest);
-				out.print("<h2 style='color :navy' > WELCOME !!"+ employeeTest.getEmpName()+"</h2>");
+				out.print("<h2 style='color :navy' > WELCOME !!"+ employeeTest.getName()+"</h2>");
 				RequestDispatcher dispatcher= req.getRequestDispatcher("/form.html");
 				dispatcher.include(req,resp);
 				
