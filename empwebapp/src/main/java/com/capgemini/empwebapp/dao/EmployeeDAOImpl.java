@@ -103,18 +103,18 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				
 				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
 			Class.forName("com.mysql.jdbc.Driver");
-			preparedStatement.setInt(1, bean.getEid());
-			preparedStatement.setString(2, bean.getName());
-			preparedStatement.setString(4, bean.getEmailId());
-			preparedStatement.setLong(3, bean.getMobilenono());
-			preparedStatement.setString(5, bean.getGender());
-			preparedStatement.setInt(6, bean.getAge());
-			preparedStatement.setLong(7, bean.getDob());
-			preparedStatement.setString(8, bean.getDesignation());
-			preparedStatement.setLong(9, bean.getSalary());
-			preparedStatement.setLong(10, bean.getDeptid());
-			preparedStatement.setLong(11, bean.getDoj());
-			preparedStatement.setString(12, bean.getBloodgroup());
+			preparedStatement.setInt(1, test.getEid());
+			preparedStatement.setString(2, test.getName());
+			preparedStatement.setString(4, test.getEmailId());
+			preparedStatement.setLong(3, test.getMobilenono());
+			preparedStatement.setString(5, test.getGender());
+			preparedStatement.setInt(6, test.getAge());
+			preparedStatement.setLong(7, test.getDob());
+			preparedStatement.setString(8, test.getDesignation());
+			preparedStatement.setLong(9, test.getSalary());
+			preparedStatement.setLong(10, test.getDeptid());
+			preparedStatement.setLong(11, test.getDoj());
+			preparedStatement.setString(12, test.getBloodgroup());
 
 			
 

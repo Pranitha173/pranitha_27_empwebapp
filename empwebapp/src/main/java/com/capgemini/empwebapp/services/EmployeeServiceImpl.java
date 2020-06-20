@@ -6,31 +6,31 @@ import com.capgemini.empwebapp.dao.EmployeeDAO;
 import com.capgemini.empwebapp.dao.EmployeeDAOImpl;
 import com.capgemini.empwebapp.dto.EmployeeTest;
 
-public abstract class EmployeeServiceImpl implements EmployeeServices{
+public abstract class EmployeeServiceImpl implements EmployeeService{
 	
 	EmployeeDAO dao = new  EmployeeDAOImpl();
 	
-	public boolean createEmployeeInfo(EmployeeTest test) {
+	public boolean createEmployeeTest(EmployeeTest test) {
 		// TODO Auto-generated method stub
 		return dao.createEmployeeInfo(test);
 	}
 	
-	public boolean addEmployeeInfo(EmployeeTest test) {
+	public boolean addEmployeeTest(EmployeeTest test) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 	
-	public boolean updateEmployeeInfo(EmployeeTest test) {
+	public boolean updateEmployeeTest(EmployeeTest test) {
 		// TODO Auto-generated method stub
 		return dao.updateEmployeeInfo(test);
 	}
 	
-	public boolean deleteEmployeeInfo(int id) {
+	public boolean deleteEmployeeTest(int id) {
 		// TODO Auto-generated method stub
 		return dao.deleteEmployeeInfo(id);
 	}
 	
-	public EmployeeTest getEmployeeDetailsByname(String name) {
+	public EmployeeTest getEmployeeDetailsByname1(String name) {
 		// TODO Auto-generated method stub
 		return dao.getEmployeeDetailsByname(name);
 	}
@@ -46,43 +46,43 @@ public abstract class EmployeeServiceImpl implements EmployeeServices{
 	}
 
 	@Override
-	public boolean createEmployeeInfo(EmployeeBean bean) {
+	public boolean createEmployeeInfo(EmployeeTest test) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean addEmployeeInfo(EmployeeBean bean) {
+	public boolean addEmployeeInfo(EmployeeTest test) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean updateEmployeeInfo(EmployeeBean bean) {
+	public boolean updateEmployeeInfo(EmployeeTest test) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public EmployeeBean getEmployeeDetailsByname(String name) {
+	public EmployeeTest getEmployeeDetailsByname(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public EmployeeBean authenticate(int id, String empPass) {
+	public EmployeeTest authenticate(int id, String empPass) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public EmployeeBean getEmployeeDetailsByname(String name) {
+	public EmployeeTest getEmployeeDetailsByname(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public EmployeeBean authenticate(int id, String empPass) {
+	public EmployeeTest authenticate(int id, String empPass) {
 		// TODO Auto-generated method stub
 		return null;
 	}

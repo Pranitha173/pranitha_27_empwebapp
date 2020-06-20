@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.capgemini.empwebapp.dto.EmployeeTest;
+import com.capgemini.empwebapp.services.EmployeeService;
 import com.capgemini.empwebapp.services.EmployeeServiceImpl;
 
 public class LoginServlet {

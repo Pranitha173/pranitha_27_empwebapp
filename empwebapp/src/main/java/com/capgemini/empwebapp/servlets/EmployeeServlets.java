@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.capgemini.empwebapp.dto.EmployeeBean;
-import com.capgemini.empwebapp.services.EmployeeServices;
-import com.capgemini.empwebapp.services.EmployeeServicesImple;
+import com.capgemini.empwebapp.dto.EmployeeTest;
+import com.capgemini.empwebapp.services.EmployeeService;
+import com.capgemini.empwebapp.services.EmployeeServiceImpl;
 
 @SuppressWarnings("serial")
 public class EmployeeServlets extends HttpServlet {
 	
-	private EmployeeServices service= new EmployeeServicesImple();
+	private EmployeeService service= new EmployeeServiceImpl();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// get query string
@@ -26,12 +26,12 @@ public class EmployeeServlets extends HttpServlet {
 		String designation = req.getParameter("designation");
 		
 		
-		EmployeeBean bean  = new EmployeeBean();
-		bean.getEmpId();
-		bean.getEmpName();
-		bean.getDesignation();
+		EmployeeTest test  = new EmployeeTest();
+		test.getEmpId();
+		test.getEmpName();
+		test.getDesignation();
 		
-		boolean isAdded= service.addEmployeeInfo(bean);
+		boolean isAdded= service.addEmployeeInfo(test);
 		PrintWriter out = resp.getWriter();
 		resp.setContentType("text/html");
 		out.println("<html>");
